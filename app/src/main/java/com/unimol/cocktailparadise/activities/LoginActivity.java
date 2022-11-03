@@ -15,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordBox;
     private Button loginButton;
     private TextView registerLink;
-    private TextView changePasswordLink;
     private String loginUrl = "login/dologin?";
 
     @Override
