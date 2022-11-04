@@ -1,36 +1,37 @@
 package com.unimol.cocktailparadise.adapters;
 
-import android.widget.ImageView;
-import android.widget.TextView;
-
 public class DrinkItem {
 
-    String drinkName;
-    String categoryName;
+    String strDrink;
+    String strCategory;
     int idDrink;
-    String imageView;
+    String strDrinkThumb;
+    String strInstructionsIT;
+    String strGlass;
+    String strAlcoholic;
+
 
     public DrinkItem(String drinkName, String categoryName, int idDrink, String imageView) {
-        this.drinkName = drinkName;
-        this.categoryName = categoryName;
+        this.strDrink = drinkName;
+        this.strCategory = categoryName;
         this.idDrink = idDrink;
-        this.imageView = imageView;
+        this.strDrinkThumb = imageView;
     }
 
-    public String getDrinkName() {
-        return drinkName;
+    public String getStrDrink() {
+        return strDrink;
     }
 
-    public void setDrinkName(String drinkName) {
-        this.drinkName = drinkName;
+    public void setStrDrink(String strDrink) {
+        this.strDrink = strDrink;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getStrCategory() {
+        return strCategory;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setStrCategory(String strCategory) {
+        this.strCategory = strCategory;
     }
 
     public int getIdDrink() {
@@ -41,11 +42,11 @@ public class DrinkItem {
         this.idDrink = idDrink;
     }
 
-    public String getImageView() {
-        return imageView;
+    public String getStrDrinkThumb() {
+        return strDrinkThumb;
     }
 
-    public void setImageView(String imageView) {
-        this.imageView = imageView;
+    public void setStrDrinkThumb(String strDrinkThumb) {
+        this.strDrinkThumb = strDrinkThumb;
     }
 }
