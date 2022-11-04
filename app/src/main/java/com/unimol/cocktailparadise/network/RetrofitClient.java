@@ -7,14 +7,14 @@ public class RetrofitClient {
 
     private static Retrofit retrofit;
 
-    private static String CKDB_BASE_URL = "https://www.thecocktaildb.com/";
-    private static String MYSQL_BASE_URL = "https://8f09-213-45-198-238.eu.ngrok.io/";
+    private static String BASE_URL = "https://www.thecocktaildb.com/";
+    private static String MYSQL_BASE_URL = "https://3725-213-45-198-238.eu.ngrok.io/";
 
 
-    public static Retrofit getRetrofitInstanceCKDB(){
+    public static Retrofit getRetrofitInstance(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl(CKDB_BASE_URL)
+                    .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

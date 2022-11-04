@@ -3,6 +3,7 @@ package com.unimol.cocktailparadise.network;
 import com.unimol.cocktailparadise.models.Drink;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface ApiService {
 
@@ -10,7 +11,7 @@ public interface ApiService {
     Call<Drink> getGinTonic();
 
 
-    @GET("api/json/v1/1/search.php?s={drink}")
-    Call<Drink> searchDrink(String drink);
+    @GET("api/json/v1/1/search.php")
+    Call<Drink> searchDrink(@Query("s") String s);
 
 }

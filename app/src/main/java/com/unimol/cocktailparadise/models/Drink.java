@@ -22,6 +22,19 @@ public class Drink {
         String strAlcoholic;
         String strInstructionsIT;
         String strGlass;
+        String strDrinkThumb;
+
+
+
+        public drinks(int idDrink, String strDrink, String strCategory, String strAlcoholic, String strInstructionsIT, String strGlass, String strDrinkThumb) {
+            this.idDrink = idDrink;
+            this.strDrink = strDrink;
+            this.strCategory = strCategory;
+            this.strAlcoholic = strAlcoholic;
+            this.strInstructionsIT = strInstructionsIT;
+            this.strGlass = strGlass;
+            this.strDrinkThumb = strDrinkThumb;
+        }
 
         public String getStrAlcoholic() {
             return strAlcoholic;
@@ -54,8 +67,6 @@ public class Drink {
         public void setStrDrinkThumb(String strDrinkThumb) {
             this.strDrinkThumb = strDrinkThumb;
         }
-
-        String strDrinkThumb;
 
 
         public String getStrCategory() {

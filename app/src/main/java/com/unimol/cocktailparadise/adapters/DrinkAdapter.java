@@ -1,8 +1,10 @@
 package com.unimol.cocktailparadise.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,47 +14,34 @@ import com.unimol.cocktailparadise.R;
 import com.unimol.cocktailparadise.models.Drink;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.MyViewHolder>  {
+public class DrinkAdapter extends RecyclerView.Adapter<MyViewHolder>  {
 
-    private ArrayList<Drink.drinks> drinkArrayList;
+    Context context;
+    List<DrinkItem> items;
 
-    public DrinkAdapter(ArrayList<Drink.drinks> drinkArrayList){
-        this.drinkArrayList = drinkArrayList;
+    public DrinkAdapter(Context context, List<DrinkItem> items) {
+        this.context = context;
+        this.items = items;
     }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-
-        private TextView nameTxt;
-        private TextView categoryTxt;
-
-        public MyViewHolder(final View view){
-            super(view);
-            nameTxt = view.findViewById(R.id.nameTxt);
-            categoryTxt = view.findViewById(R.id.categoryTxt);
-        }
-    }
-
 
     @NonNull
     @Override
-    public DrinkAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.drink_item, parent, false);
-        return new MyViewHolder(itemView);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.drink_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DrinkAdapter.MyViewHolder holder, int position) {
-        String name = drinkArrayList.get(position).getStrDrink();
-        String category = drinkArrayList.get(position).getStrCategory();
-        holder.nameTxt.setText(name);
-        holder.categoryTxt.setText(category);
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.drinkName.setText(items.get(position).getDrinkName());
+        holder.categoryName.setText(items.get(position).getCategoryName());
+        holder.imageView.setImageResource(items.get(position).getImageView());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
-
 }
