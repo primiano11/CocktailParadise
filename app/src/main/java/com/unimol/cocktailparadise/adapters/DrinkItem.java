@@ -8,9 +8,9 @@ public class DrinkItem {
     String drinkName;
     String categoryName;
     int idDrink;
-    int imageView;
+    String imageView;
 
-    public DrinkItem(String drinkName, String categoryName, int idDrink, int imageView) {
+    public DrinkItem(String drinkName, String categoryName, int idDrink, String imageView) {
         this.drinkName = drinkName;
         this.categoryName = categoryName;
         this.idDrink = idDrink;
@@ -41,11 +41,11 @@ public class DrinkItem {
         this.idDrink = idDrink;
     }
 
-    public int getImageView() {
+    public String getImageView() {
         return imageView;
     }
 
-    public void setImageView(int imageView) {
+    public void setImageView(String imageView) {
         this.imageView = imageView;
     }
 }
