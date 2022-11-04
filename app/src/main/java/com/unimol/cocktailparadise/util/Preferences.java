@@ -7,12 +7,13 @@ import android.util.Log;
 public class Preferences {
     private static final String PREFERENCE_NAME = "UserInfo";
 
-    public static void savePreferences(Context context, String mail, String password, int userId) {
+    public static void savePreferences(Context context, String mail, String password, int userId, String username) {
         SharedPreferences  sharedPreferences = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("mail", mail);
         editor.putString("password", password);
         editor.putInt("userId", userId);
+        editor.putString("username", username);
         editor.apply();
     }
 

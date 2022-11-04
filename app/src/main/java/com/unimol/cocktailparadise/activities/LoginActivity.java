@@ -2,6 +2,7 @@ package com.unimol.cocktailparadise.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,11 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.unimol.cocktailparadise.R;
 import com.unimol.cocktailparadise.models.LoginDTO;
 import com.unimol.cocktailparadise.network.RetrofitClient;
 import com.unimol.cocktailparadise.network.UserService;
+import com.unimol.cocktailparadise.util.Preferences;
 
 import java.util.ArrayList;
 
@@ -28,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordBox;
     private Button loginButton;
     private TextView registerLink;
-    private String loginUrl = "login/dologin?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +56,15 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
                         LoginDTO loginDTO = response.body();
-
-                        Integer userId = loginDTO.getUserId();
-                        Log.e("mail", userId.toString());
-
+                        int userId = loginDTO.getUserId();
+                        String username = loginDTO.getUsername();
                         if(loginDTO.getStatus() == true){
-
+                            Preferences.savePreferences(LoginActivity.this, mailBox.getText().toString().trim(), passwordBox.getText().toString().trim(), userId, username);
+                            Toast.makeText(LoginActivity.this, "Bentornato " + username + "!", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Credenziali errate!", Toast.LENGTH_LONG).show();
                         }
-
                     }
 
                     @Override
@@ -69,6 +72,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        this.registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }
