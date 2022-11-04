@@ -45,19 +45,21 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 UserService userService = RetrofitClient.getRetrofitInstanceMYSQ().create(UserService.class);
-                Call<LoginDTO> call = userService.login(mailBox.toString(), passwordBox.toString());
+                Call<LoginDTO> call = userService.login(mailBox.getText().toString().trim(), passwordBox.getText().toString().trim());
 
+                Log.e("mail", mailBox.getText().toString().trim());
+                Log.e("password", passwordBox.getText().toString().trim());
 
                 call.enqueue(new Callback<LoginDTO>() {
                     @Override
                     public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
-                        Log.e("CIAO", "CIAO");
                         LoginDTO loginDTO = response.body();
 
+                        Integer userId = loginDTO.getUserId();
+                        Log.e("mail", userId.toString());
+
                         if(loginDTO.getStatus() == true){
-                            Log.e("RESULT", "LOGIN OK" );
-                        } else {
-                            Log.e("RESULT", "LOGIN FALLITO");
+
                         }
 
                     }

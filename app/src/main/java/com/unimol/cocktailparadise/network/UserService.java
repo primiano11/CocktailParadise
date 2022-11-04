@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 
 public interface UserService {
 
-    @GET("user/login")
+    @GET("CocktailParadiseWS/rest/user/login")
     Call<LoginDTO> login(@Query("mail") String mail, @Query("password") String password);
 
 }
