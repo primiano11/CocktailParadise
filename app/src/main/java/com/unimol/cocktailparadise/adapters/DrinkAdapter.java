@@ -37,6 +37,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<MyViewHolder>  {
         holder.drinkName.setText(items.get(position).getStrDrink());
         holder.categoryName.setText(items.get(position).getStrCategory());
         //holder.imageView.setImageResource(items.get(position).getImageView());
+
         if(items.get(position).getStrDrinkThumb()!=null){
             Picasso.get().load(items.get(position).getStrDrinkThumb()).into(holder.imageView);
         }
