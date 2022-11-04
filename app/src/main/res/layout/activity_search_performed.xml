@@ -11,4 +11,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/recyclerview"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nessun risultato =("
+        android:visibility="invisible"
+        android:textSize="24sp"
+        android:id="@+id/noResultsTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
