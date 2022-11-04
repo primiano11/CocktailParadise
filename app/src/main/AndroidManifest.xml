@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CocktailParadise"
         tools:targetApi="31">
         <activity
+            android:name=".activities.DrinkDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.UserDrinksActivity"
             android:exported="false" />
         <activity

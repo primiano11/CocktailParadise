@@ -19,6 +19,7 @@ import com.unimol.cocktailparadise.adapters.DrinkItem;
 import com.unimol.cocktailparadise.models.Drink;
 import com.unimol.cocktailparadise.network.ApiService;
 import com.unimol.cocktailparadise.network.RetrofitClient;
+import com.unimol.cocktailparadise.util.RecyclerViewInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +28,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SearchPerformedActivity extends AppCompatActivity {
+public class SearchPerformedActivity extends AppCompatActivity implements RecyclerViewInterface {
 
     private TextView noResultsTextView;
+    ArrayList<Drink.drinks> responseDrinks = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class SearchPerformedActivity extends AppCompatActivity {
             public void onResponse(Call<Drink> call, Response<Drink> response) {
 
                 List<DrinkItem> itemList = new ArrayList<>();
-                ArrayList<Drink.drinks> responseDrinks = response.body().getDrinks();
+                responseDrinks = response.body().getDrinks();
 
                 if(responseDrinks != null){
                     for (Drink.drinks drinks:responseDrinks) {
@@ -61,7 +63,7 @@ public class SearchPerformedActivity extends AppCompatActivity {
 
                     RecyclerView recyclerView = findViewById(R.id.recyclerview);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    recyclerView.setAdapter(new DrinkAdapter(getApplicationContext(), itemList));
+                    recyclerView.setAdapter(new DrinkAdapter(getApplicationContext(), itemList, SearchPerformedActivity.this));
                 } else {
 
                     noResultsTextView.setVisibility(View.VISIBLE);
@@ -71,9 +73,24 @@ public class SearchPerformedActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Drink> call, Throwable t) {
-
             }
         });
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+        Intent intent = new Intent(SearchPerformedActivity.this, DrinkDetailsActivity.class);
+        intent.putExtra("idDrink", responseDrinks.get(position).getIdDrink());
+        intent.putExtra("strDrink", responseDrinks.get(position).getStrDrink());
+        intent.putExtra("strAlcoholic", responseDrinks.get(position).getStrAlcoholic());
+        intent.putExtra("strCategory", responseDrinks.get(position).getStrCategory());
+        intent.putExtra("strThumb", responseDrinks.get(position).getStrDrinkThumb());
+        intent.putExtra("strGlass", responseDrinks.get(position).getStrGlass());
+        intent.putExtra("strInstructionsIT", responseDrinks.get(position).getStrInstructionsIT());
+
+        startActivity(intent);
 
     }
 }
