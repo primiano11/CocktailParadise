@@ -10,12 +10,14 @@ public class DrinkItem {
     String strGlass;
     String strAlcoholic;
 
-
-    public DrinkItem(String drinkName, String categoryName, int idDrink, String imageView) {
-        this.strDrink = drinkName;
-        this.strCategory = categoryName;
+    public DrinkItem(String strDrink, String strCategory, int idDrink, String strDrinkThumb, String strInstructionsIT, String strGlass, String strAlcoholic) {
+        this.strDrink = strDrink;
+        this.strCategory = strCategory;
         this.idDrink = idDrink;
-        this.strDrinkThumb = imageView;
+        this.strDrinkThumb = strDrinkThumb;
+        this.strInstructionsIT = strInstructionsIT;
+        this.strGlass = strGlass;
+        this.strAlcoholic = strAlcoholic;
     }
 
     public String getStrDrink() {
@@ -48,5 +50,29 @@ public class DrinkItem {
 
     public void setStrDrinkThumb(String strDrinkThumb) {
         this.strDrinkThumb = strDrinkThumb;
+    }
+
+    public String getStrInstructionsIT() {
+        return strInstructionsIT;
+    }
+
+    public void setStrInstructionsIT(String strInstructionsIT) {
+        this.strInstructionsIT = strInstructionsIT;
+    }
+
+    public String getStrGlass() {
+        return strGlass;
+    }
+
+    public void setStrGlass(String strGlass) {
+        this.strGlass = strGlass;
+    }
+
+    public String getStrAlcoholic() {
+        return strAlcoholic;
+    }
+
+    public void setStrAlcoholic(String strAlcoholic) {
+        this.strAlcoholic = strAlcoholic;
     }
 }

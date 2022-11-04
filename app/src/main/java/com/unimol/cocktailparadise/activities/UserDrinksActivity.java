@@ -32,6 +32,8 @@ public class UserDrinksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_performed);
+
+        /*
         this.noResultsTextView = findViewById(R.id.noResultsTextView);
 
         Intent intent = getIntent();
@@ -68,7 +70,7 @@ public class UserDrinksActivity extends AppCompatActivity {
             public void onFailure(Call<Drink> call, Throwable t) {
 
             }
-        });
+        });*/
 
     }
 }
