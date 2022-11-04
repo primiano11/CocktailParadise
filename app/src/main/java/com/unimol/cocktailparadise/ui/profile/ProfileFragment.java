@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.unimol.cocktailparadise.R;
+import com.unimol.cocktailparadise.activities.LoginActivity;
 import com.unimol.cocktailparadise.activities.MainActivity;
 import com.unimol.cocktailparadise.activities.UserDrinksActivity;
 import com.unimol.cocktailparadise.util.Preferences;
@@ -24,6 +25,7 @@ public class ProfileFragment extends Fragment {
     private TextView userNameText;
     private TextView emailText;
     private Button seeDrinks;
+    private Button logoutButton;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -47,6 +49,8 @@ public class ProfileFragment extends Fragment {
         emailText.setText(Preferences.getMailFromPreferences(getContext()));
 
         this.seeDrinks = (Button) getView().findViewById(R.id.seeDrinks);
+        this.logoutButton = (Button) getView().findViewById(R.id.logoutButton);
+
 
         this.seeDrinks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +59,13 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                Preferences.clearPreferences(getContext());
+            }
+        });
 
     }
 }
