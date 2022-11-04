@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.unimol.cocktailparadise.R;
@@ -66,5 +68,36 @@ public class SearchPerformedActivity extends AppCompatActivity {
         });
 
 
+        /*super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search_performed);
+
+
+        ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
+        Call<Drink> call = apiService.getGinTonic();
+
+        call.enqueue(new Callback<Drink>() {
+            @Override
+            public void onResponse(Call<Drink> call, Response<Drink> response) {
+
+                ArrayList<Drink.drinks> drinks = response.body().getDrinks();
+                List<DrinkItem> itemList = new ArrayList<>();
+
+                //for(Drink.drinks drinks1 : drinks){
+                  //  Log.e("CIAO", "Drink name: " +drinks1.getStrDrink() + "Drink id: " +drinks1.getIdDrink());}
+
+                for (Drink.drinks drinks1:drinks) {
+                    itemList.add(new DrinkItem(drinks1.getStrDrink(), drinks1.getStrCategory(), drinks1.getIdDrink(), R.drawable.logo2));
+                    Log.e("CIAO", "Drink name: " +drinks1.getStrDrink() + "Drink id: " +drinks1.getIdDrink());
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<Drink> call, Throwable t) {
+
+            }
+        });*/
     }
 }
