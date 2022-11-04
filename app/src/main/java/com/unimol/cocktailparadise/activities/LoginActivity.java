@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +16,6 @@ import com.unimol.cocktailparadise.models.LoginDTO;
 import com.unimol.cocktailparadise.network.RetrofitClient;
 import com.unimol.cocktailparadise.network.UserService;
 import com.unimol.cocktailparadise.util.Preferences;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                UserService userService = RetrofitClient.getRetrofitInstanceMYSQ().create(UserService.class);
+                UserService userService = RetrofitClient.getRetrofitInstanceMYSQL().create(UserService.class);
                 Call<LoginDTO> call = userService.login(mailBox.getText().toString().trim(), passwordBox.getText().toString().trim());
 
                 Log.e("mail", mailBox.getText().toString().trim());
