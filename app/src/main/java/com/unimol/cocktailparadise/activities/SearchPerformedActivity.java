@@ -86,7 +86,7 @@ public class SearchPerformedActivity extends AppCompatActivity implements Recycl
         intent.putExtra("strDrink", responseDrinks.get(position).getStrDrink());
         intent.putExtra("strAlcoholic", responseDrinks.get(position).getStrAlcoholic());
         intent.putExtra("strCategory", responseDrinks.get(position).getStrCategory());
-        intent.putExtra("strThumb", responseDrinks.get(position).getStrDrinkThumb());
+        intent.putExtra("strDrinkThumb", responseDrinks.get(position).getStrDrinkThumb());
         intent.putExtra("strGlass", responseDrinks.get(position).getStrGlass());
         intent.putExtra("strInstructionsIT", responseDrinks.get(position).getStrInstructionsIT());
 

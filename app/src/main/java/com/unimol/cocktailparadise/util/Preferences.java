@@ -17,6 +17,7 @@ public class Preferences {
         editor.apply();
     }
 
+
     public static String getUsernameFromPreferences(Context context) {
         SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString("username", " ");

@@ -2,6 +2,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFC107"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="20dp">
@@ -17,6 +18,7 @@
         android:id="@+id/drinkName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_toEndOf="@+id/imageView"
         android:text="Nome Drink"
         android:textSize="20dp" />
@@ -27,12 +29,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/imageView"
+        android:textColor="@color/black"
         android:layout_below="@+id/drinkName"
         android:text="Categoria" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:background="@color/black"
         android:layout_below="@id/imageView"
         android:layout_marginTop="10dp"/>
 

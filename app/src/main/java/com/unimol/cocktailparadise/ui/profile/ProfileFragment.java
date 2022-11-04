@@ -23,7 +23,7 @@ public class ProfileFragment extends Fragment {
 
     private TextView userNameText;
     private TextView emailText;
-    private TextView seeDrinks;
+    private Button seeDrinks;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -46,7 +46,7 @@ public class ProfileFragment extends Fragment {
         this.emailText = (TextView) getView().findViewById(R.id.emailText);
         emailText.setText(Preferences.getMailFromPreferences(getContext()));
 
-        this.seeDrinks = (TextView) getView().findViewById(R.id.seeDrinks);
+        this.seeDrinks = (Button) getView().findViewById(R.id.seeDrinks);
 
         this.seeDrinks.setOnClickListener(new View.OnClickListener() {
             @Override
