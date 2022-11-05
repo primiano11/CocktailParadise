@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         this.usernameBox = (EditText) findViewById(R.id.usernameBox);
         this.mailBox = (EditText) findViewById(R.id.mailBox);
-        this.passwordBox = (EditText) findViewById(R.id.passwordBox);
+        this.passwordBox = (EditText) findViewById(R.id.passwordBoxRegister);
         this.registerButton = (Button) findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(new View.OnClickListener() {

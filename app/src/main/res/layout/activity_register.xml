@@ -38,11 +38,13 @@
         android:hint="Password"
         android:backgroundTint="#000000"
         android:textColorHint="#000000"
-        app:endIconMode="password_toggle">
+        app:endIconMode="password_toggle"
+        app:endIconTint="#676767">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordBox"
+            android:id="@+id/passwordBoxRegister"
             style="@style/Theme.MaterialComponents.Light.Dialog.MinWidth.Bridge"
+            android:background="@drawable/layout_bg_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="#000000"

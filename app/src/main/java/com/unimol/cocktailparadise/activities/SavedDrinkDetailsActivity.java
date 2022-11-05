@@ -90,6 +90,8 @@ public class SavedDrinkDetailsActivity extends AppCompatActivity {
                     }
                 });
 
+                startActivity(new Intent(SavedDrinkDetailsActivity.this, MainActivity.class));
+
 
 
 
@@ -98,8 +100,4 @@ public class SavedDrinkDetailsActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(SavedDrinkDetailsActivity.this, UserDrinksActivity.class));
-    }
 }

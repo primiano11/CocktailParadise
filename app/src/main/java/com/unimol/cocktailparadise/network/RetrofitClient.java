@@ -9,7 +9,7 @@ public class RetrofitClient {
     private static Retrofit mysqlretrofit;
 
     private static String BASE_URL = "https://www.thecocktaildb.com/";
-    private static String MYSQL_BASE_URL = "https://d14b-213-45-198-238.eu.ngrok.io/";
+    private static String MYSQL_BASE_URL = "https://2512-213-45-198-238.eu.ngrok.io/";
 
 
     public static Retrofit getRetrofitInstance(){
