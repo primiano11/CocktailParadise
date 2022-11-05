@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordBox;
     private Button loginButton;
     private TextView registerLink;
+    private TextView recoverPasswordText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         this.passwordBox = (EditText) findViewById(R.id.passwordBox);
         this.loginButton = (Button) findViewById(R.id.loginButton);
         this.registerLink = (TextView) findViewById(R.id.registerLink);
+        this.recoverPasswordText = (TextView) findViewById(R.id.recoverPasswordText);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,15 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
+
+        this.recoverPasswordText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, OtpActivity.class));
+            }
+        });
+
+
     }
 
     @Override

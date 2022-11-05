@@ -1,6 +1,7 @@
 package com.unimol.cocktailparadise.network;
 
 import com.unimol.cocktailparadise.models.LoginDTO;
+import com.unimol.cocktailparadise.models.OTPResponseDTO;
 import com.unimol.cocktailparadise.models.RegisterDTO;
 
 import retrofit2.Call;
@@ -15,5 +16,9 @@ public interface UserService {
 
     @POST("CocktailParadiseWS/rest/user/register")
     Call<RegisterDTO> register(@Query("username") String username, @Query("mail") String mail, @Query("password") String password);
+
+    @GET("CocktailParadiseWS/rest/user/passwordrecovery")
+    Call<OTPResponseDTO> passwordRecovery(@Query("mail") String mail);
+
 
 }
