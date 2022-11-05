@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,6 +30,8 @@ public class DrinkDetailsActivity extends AppCompatActivity {
     private ImageView drinkThumbnail;
     private TextView drinkNameDetails;
     private TextView drinkCategoryDetails;
+    private TextView drinkGlassDetails;
+    private TextView drinkAlcoholicDetails;
     private TextView instructionsDetails;
     private Button saveButton;
 
@@ -40,12 +43,22 @@ public class DrinkDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        Log.e("alcco", getIntent().getStringExtra("strAlcoholic"));
+
+
+        Log.e("categ", getIntent().getStringExtra("strCategory"));
 
         this.drinkThumbnail = (ImageView) findViewById(R.id.drinkImage);
         Picasso.get().load(intent.getStringExtra("strDrinkThumb")).into(drinkThumbnail);
 
         this.drinkCategoryDetails = (TextView) findViewById(R.id.drinkCategoryDetails);
         drinkCategoryDetails.setText(intent.getStringExtra("strCategory"));
+
+        this.drinkGlassDetails = (TextView) findViewById(R.id.drinkGlassDetails);
+        drinkGlassDetails.setText(intent.getStringExtra("strGlass"));
+
+        this.drinkAlcoholicDetails = (TextView) findViewById(R.id.drinkAlcoholicDetails);
+        drinkAlcoholicDetails.setText(intent.getStringExtra("strAlcoholic"));
 
         this.drinkNameDetails = (TextView) findViewById(R.id.drinkNameDetails);
         drinkNameDetails.setText(intent.getStringExtra("strDrink"));

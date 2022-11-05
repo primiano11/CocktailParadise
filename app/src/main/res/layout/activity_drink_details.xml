@@ -9,6 +9,36 @@
     tools:context=".activities.DrinkDetailsActivity">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALVA QUESTO DRINK"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
+
+        <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="350dp"
+        android:layout_height="280dp"
+        android:alpha="0.5"
+        android:src="@drawable/logo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
         android:id="@+id/drinkImage"
         android:layout_width="140dp"
@@ -21,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@id/drinkImage"
         android:fontFamily="@font/notable"
         android:text="Nome Cocktail"
@@ -40,46 +70,37 @@
         android:textSize="14dp" />
 
     <TextView
+        android:id="@+id/drinkGlassDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinkCategoryDetails"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@id/drinkImage"
+        android:text="Bicchiere"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/drinkAlcoholicDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drinkGlassDetails"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@id/drinkImage"
+        android:text="Alcolico"
+        android:textSize="14dp" />
+
+    <TextView
         android:id="@+id/instructionsDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/drinkImage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="100dp"
         android:text="Istruzioni"
         android:padding="10dp"
         android:textColor="@color/black"
         android:background="@drawable/layout_bg"
         android:textSize="20dp" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SALVA QUESTO DRINK"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.86" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="350dp"
-            android:layout_height="280dp"
-            android:alpha="0.5"
-            android:src="@drawable/logo2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.38"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 </RelativeLayout>
