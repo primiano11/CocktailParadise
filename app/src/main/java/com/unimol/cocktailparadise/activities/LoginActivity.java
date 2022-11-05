@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                         LoginDTO loginDTO = response.body();
                         int userId = loginDTO.getUserId();
                         String username = loginDTO.getUsername();
-                        if(loginDTO.getStatus() == true){
+                        if(loginDTO.getStatus()){
                             Preferences.savePreferences(LoginActivity.this, mailBox.getText().toString().trim(), passwordBox.getText().toString().trim(), userId, username);
                             Toast.makeText(LoginActivity.this, "Bentornato " + username + "!", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));

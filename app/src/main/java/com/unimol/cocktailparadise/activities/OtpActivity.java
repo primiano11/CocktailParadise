@@ -26,6 +26,7 @@ public class OtpActivity extends AppCompatActivity {
     private Button recoverPassButton;
     private Button checkOtpButton;
     int otpValue = 0;
+    String mailForIntent = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class OtpActivity extends AppCompatActivity {
                             OTPResponseDTO otpResponseDTO = response.body();
 
                             if(otpResponseDTO.getStatus()){
+                                mailForIntent = mailLostText.getText().toString().trim();
                                 otpValue = otpResponseDTO.getOtpValue();
                                 Toast.makeText(OtpActivity.this, "Codice OTP inviato alla mail!", Toast.LENGTH_SHORT).show();
                                 Integer i = otpValue;
@@ -88,7 +90,7 @@ public class OtpActivity extends AppCompatActivity {
 
                 if(otpValue == Integer.parseInt(otpEditText.getText().toString())){
                     Intent intent = new Intent(OtpActivity.this, NewPasswordActivity.class);
-                    intent.putExtra("mail", mailLostText.getText().toString().trim());
+                    intent.putExtra("mail", mailForIntent);
                     startActivity(intent);
                 } else{
                     Toast.makeText(OtpActivity.this, "OTP non corretto!", Toast.LENGTH_LONG).show();

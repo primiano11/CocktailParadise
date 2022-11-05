@@ -20,5 +20,7 @@ public interface UserService {
     @GET("CocktailParadiseWS/rest/user/passwordrecovery")
     Call<OTPResponseDTO> passwordRecovery(@Query("mail") String mail);
 
+    @POST("CocktailParadiseWS/rest/user/changepassword")
+    Call<OTPResponseDTO> changePassword(@Query("mail") String mail, @Query("password") String password);
 
 }
