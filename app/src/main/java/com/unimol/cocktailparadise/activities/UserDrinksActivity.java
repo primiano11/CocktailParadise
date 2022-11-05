@@ -82,7 +82,7 @@ public class UserDrinksActivity extends AppCompatActivity implements RecyclerVie
     @Override
     public void onItemClick(int position) {
 
-        Intent intent = new Intent(UserDrinksActivity.this, DrinkDetailsActivity.class);
+        Intent intent = new Intent(UserDrinksActivity.this, SavedDrinkDetailsActivity.class);
         intent.putExtra("idDrink", responseDrinks.get(position).getIdDrink());
         intent.putExtra("strDrink", responseDrinks.get(position).getStrDrink());
         intent.putExtra("strAlcoholic", responseDrinks.get(position).getStrAlcoholic());
