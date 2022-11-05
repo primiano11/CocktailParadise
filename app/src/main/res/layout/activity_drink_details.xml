@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#FFC107"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFC107"
     android:padding="10dp"
     tools:context=".activities.DrinkDetailsActivity">
 
@@ -20,32 +20,36 @@
         android:id="@+id/drinkNameDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/drinkImage"
-        android:fontFamily="@font/notable"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:textSize="28dp"
-        android:text="Nome Cocktail" />
+        android:layout_toEndOf="@id/drinkImage"
+        android:fontFamily="@font/notable"
+        android:text="Nome Cocktail"
+        android:textColor="@color/black"
+        android:textSize="28dp" />
 
     <TextView
         android:id="@+id/drinkCategoryDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/drinkImage"
+        android:layout_below="@id/drinkNameDetails"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/drinkNameDetails"
-        android:textSize="14dp"
-        android:text="Categoria" />
+        android:layout_toEndOf="@id/drinkImage"
+        android:text="Categoria"
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/instructionsDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/drinkImage"
-        android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:text="Istruzioni"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/layout_bg"
         android:textSize="20dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
