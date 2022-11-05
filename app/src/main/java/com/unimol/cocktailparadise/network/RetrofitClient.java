@@ -12,8 +12,8 @@ public class RetrofitClient {
     private static String MYSQL_BASE_URL = "https://2512-213-45-198-238.eu.ngrok.io/";
 
 
-    public static Retrofit getRetrofitInstance(){
-        if(retrofit == null){
+    public static Retrofit getRetrofitInstance() {
+        if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -23,8 +23,8 @@ public class RetrofitClient {
     }
 
 
-    public static Retrofit getRetrofitInstanceMYSQL(){
-        if(mysqlretrofit == null){
+    public static Retrofit getRetrofitInstanceMYSQL() {
+        if (mysqlretrofit == null) {
             mysqlretrofit = new Retrofit.Builder()
                     .baseUrl(MYSQL_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())

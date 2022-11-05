@@ -18,7 +18,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     ImageView imageView;
 
 
-    public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface ) {
+    public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
         super(itemView);
         this.recyclerViewInterface = recyclerViewInterface;
 
@@ -29,10 +29,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(MyViewHolder.this.recyclerViewInterface != null){
+                if (MyViewHolder.this.recyclerViewInterface != null) {
                     int position = getAdapterPosition();
 
-                    if(position != RecyclerView.NO_POSITION){
+                    if (position != RecyclerView.NO_POSITION) {
                         recyclerViewInterface.onItemClick(position);
                     }
                 }

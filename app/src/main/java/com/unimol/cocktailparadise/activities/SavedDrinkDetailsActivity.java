@@ -93,8 +93,6 @@ public class SavedDrinkDetailsActivity extends AppCompatActivity {
                 startActivity(new Intent(SavedDrinkDetailsActivity.this, MainActivity.class));
 
 
-
-
             }
         });
 

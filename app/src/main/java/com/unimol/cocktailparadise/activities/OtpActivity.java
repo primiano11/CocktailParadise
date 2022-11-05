@@ -48,7 +48,7 @@ public class OtpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String temp = mailLostText.getText().toString().trim();
 
-                if(!temp.isEmpty()){
+                if (!temp.isEmpty()) {
 
                     UserService userService = RetrofitClient.getRetrofitInstanceMYSQL().create(UserService.class);
                     Call<OTPResponseDTO> call = userService.passwordRecovery(temp);
@@ -58,16 +58,20 @@ public class OtpActivity extends AppCompatActivity {
                         public void onResponse(Call<OTPResponseDTO> call, Response<OTPResponseDTO> response) {
                             OTPResponseDTO otpResponseDTO = response.body();
 
-                            if(otpResponseDTO.getStatus()){
-                                mailForIntent = mailLostText.getText().toString().trim();
-                                otpValue = otpResponseDTO.getOtpValue();
-                                Toast.makeText(OtpActivity.this, "Codice OTP inviato alla mail!", Toast.LENGTH_SHORT).show();
-                                Integer i = otpValue;
-                                Log.e("MESSAGE", i.toString());
+                            if (!(otpResponseDTO == null)) {
+                                if (otpResponseDTO.getStatus()) {
+                                    mailForIntent = mailLostText.getText().toString().trim();
+                                    otpValue = otpResponseDTO.getOtpValue();
+                                    Toast.makeText(OtpActivity.this, "Codice OTP inviato alla mail!", Toast.LENGTH_SHORT).show();
+                                    Integer i = otpValue;
+                                    Log.e("MESSAGE", i.toString());
 
-                                otpEditText.setVisibility(View.VISIBLE);
-                                checkOtpButton.setVisibility(View.VISIBLE);
-                                checkOtpButton.setClickable(true);
+                                    otpEditText.setVisibility(View.VISIBLE);
+                                    checkOtpButton.setVisibility(View.VISIBLE);
+                                    checkOtpButton.setClickable(true);
+                                }
+                            } else {
+                                Toast.makeText(OtpActivity.this, "Errore di connessione!", Toast.LENGTH_LONG).show();
                             }
                         }
 
@@ -77,8 +81,7 @@ public class OtpActivity extends AppCompatActivity {
                         }
                     });
 
-                }
-                else {
+                } else {
                     Toast.makeText(OtpActivity.this, "Devi inserire una mail!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -88,11 +91,11 @@ public class OtpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(otpValue == Integer.parseInt(otpEditText.getText().toString())){
+                if (otpValue == Integer.parseInt(otpEditText.getText().toString())) {
                     Intent intent = new Intent(OtpActivity.this, NewPasswordActivity.class);
                     intent.putExtra("mail", mailForIntent);
                     startActivity(intent);
-                } else{
+                } else {
                     Toast.makeText(OtpActivity.this, "OTP non corretto!", Toast.LENGTH_LONG).show();
                 }
             }

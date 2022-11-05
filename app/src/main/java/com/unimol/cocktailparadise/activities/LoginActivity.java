@@ -54,19 +54,26 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
                         LoginDTO loginDTO = response.body();
-                        int userId = loginDTO.getUserId();
-                        String username = loginDTO.getUsername();
-                        if(loginDTO.getStatus()){
-                            Preferences.savePreferences(LoginActivity.this, mailBox.getText().toString().trim(), passwordBox.getText().toString().trim(), userId, username);
-                            Toast.makeText(LoginActivity.this, "Bentornato " + username + "!", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        if (!(loginDTO == null)) {
+                            int userId = loginDTO.getUserId();
+                            String username = loginDTO.getUsername();
+                            if (loginDTO.getStatus()) {
+                                Preferences.savePreferences(LoginActivity.this, mailBox.getText().toString().trim(), passwordBox.getText().toString().trim(), userId, username);
+                                Toast.makeText(LoginActivity.this, "Bentornato " + username + "!", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Credenziali errate!", Toast.LENGTH_LONG).show();
+                            }
                         } else {
-                            Toast.makeText(LoginActivity.this, "Credenziali errate!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Errore di connessione!", Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<LoginDTO> call, Throwable t) {
+
+                        Toast.makeText(LoginActivity.this, "Errore di connessione!", Toast.LENGTH_LONG).show();
+
 
                     }
                 });

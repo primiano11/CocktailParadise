@@ -83,7 +83,7 @@ public class DrinkDetailsActivity extends AppCompatActivity {
 
 
                 DrinkService drinkService = RetrofitClient.getRetrofitInstanceMYSQL().create(DrinkService.class);
-                Call<DrinkResponseDTO> call = drinkService.saveDrink(idDrink, strDrink,strCategory, strAlcoholic, strGlass, strInstructionsIT, userId, strDrinkThumb);
+                Call<DrinkResponseDTO> call = drinkService.saveDrink(idDrink, strDrink, strCategory, strAlcoholic, strGlass, strInstructionsIT, userId, strDrinkThumb);
 
                 call.enqueue(new Callback<DrinkResponseDTO>() {
                     @Override
@@ -98,8 +98,6 @@ public class DrinkDetailsActivity extends AppCompatActivity {
 
                     }
                 });
-
-
 
 
             }

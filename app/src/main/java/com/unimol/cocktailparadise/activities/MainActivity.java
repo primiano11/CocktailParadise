@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     ProfileFragment profileFragment = new ProfileFragment();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
                         return true;
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }

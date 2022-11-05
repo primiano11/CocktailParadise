@@ -45,7 +45,7 @@ public class NewPasswordActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<OTPResponseDTO> call, Response<OTPResponseDTO> response) {
                         OTPResponseDTO otpResponseDTO = response.body();
-                        if(otpResponseDTO.getStatus()){
+                        if (otpResponseDTO.getStatus()) {
                             Toast.makeText(NewPasswordActivity.this, otpResponseDTO.getMessage(), Toast.LENGTH_LONG).show();
                             Toast.makeText(NewPasswordActivity.this, "Ora effettua l'accesso.", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(NewPasswordActivity.this, LoginActivity.class));
@@ -65,10 +65,7 @@ public class NewPasswordActivity extends AppCompatActivity {
         });
 
 
-
-
     }
-
 
 
 }

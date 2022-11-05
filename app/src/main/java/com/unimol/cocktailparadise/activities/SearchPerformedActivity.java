@@ -53,12 +53,12 @@ public class SearchPerformedActivity extends AppCompatActivity implements Recycl
                 List<DrinkItem> itemList = new ArrayList<>();
                 responseDrinks = response.body().getDrinks();
 
-                if(responseDrinks != null){
-                    for (Drink.drinks drinks:responseDrinks) {
+                if (responseDrinks != null) {
+                    for (Drink.drinks drinks : responseDrinks) {
                         itemList.add(new DrinkItem(drinks.getStrDrink(), drinks.getStrCategory(), drinks.getIdDrink(), drinks.getStrDrinkThumb(),
-                        drinks.getStrInstructionsIT(), drinks.getStrGlass(), drinks.getStrAlcoholic()));
+                                drinks.getStrInstructionsIT(), drinks.getStrGlass(), drinks.getStrAlcoholic()));
 
-                        Log.e("CIAO", "Drink name: " +drinks.getStrDrink() + "Drink id: " +drinks.getIdDrink() + "Instruzioni: \n" + drinks.getStrInstructionsIT());
+                        Log.e("CIAO", "Drink name: " + drinks.getStrDrink() + "Drink id: " + drinks.getIdDrink() + "Instruzioni: \n" + drinks.getStrInstructionsIT());
                     }
 
                     RecyclerView recyclerView = findViewById(R.id.recyclerview);

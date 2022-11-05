@@ -55,12 +55,17 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<RegisterDTO> call, Response<RegisterDTO> response) {
                         RegisterDTO registerDTO = response.body();
-                        if(registerDTO.getStatus() == true){
-                            Toast.makeText(RegisterActivity.this, registerDTO.getError_msg(), Toast.LENGTH_SHORT).show();
-                            Toast.makeText(RegisterActivity.this, "Ora effettua l'accesso", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        if (!(registerDTO == null)) {
+                            if (registerDTO.getStatus() == true) {
+                                Toast.makeText(RegisterActivity.this, registerDTO.getError_msg(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Ora effettua l'accesso", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            } else {
+                                Toast.makeText(RegisterActivity.this, registerDTO.getError_msg(), Toast.LENGTH_SHORT).show();
+                            }
+
                         } else {
-                            Toast.makeText(RegisterActivity.this, registerDTO.getError_msg(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Errore di connessione!", Toast.LENGTH_LONG).show();
                         }
                     }
 

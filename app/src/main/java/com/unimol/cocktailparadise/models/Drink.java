@@ -25,7 +25,6 @@ public class Drink {
         String strDrinkThumb;
 
 
-
         public drinks(int idDrink, String strDrink, String strCategory, String strAlcoholic, String strInstructionsIT, String strGlass, String strDrinkThumb) {
             this.idDrink = idDrink;
             this.strDrink = strDrink;
