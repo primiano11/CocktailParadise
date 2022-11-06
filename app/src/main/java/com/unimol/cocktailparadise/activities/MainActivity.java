@@ -3,6 +3,7 @@ package com.unimol.cocktailparadise.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -29,7 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
+        Intent intent = getIntent();
+        boolean flag = intent.getBooleanExtra("setProfile", false);
+
+        if(!flag){
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+        }
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

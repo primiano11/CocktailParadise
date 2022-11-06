@@ -90,7 +90,9 @@ public class SavedDrinkDetailsActivity extends AppCompatActivity {
                     }
                 });
 
-                startActivity(new Intent(SavedDrinkDetailsActivity.this, MainActivity.class));
+                Intent intent2 = new Intent(SavedDrinkDetailsActivity.this, MainActivity.class);
+                intent2.putExtra("setProfile", true);
+                startActivity(intent2);
 
 
             }
