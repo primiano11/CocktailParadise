@@ -25,15 +25,16 @@
         android:id="@+id/recyclerview"/>
 
     <TextView
+        android:id="@+id/noResultsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/layout_bg"
-        android:text="Nessun risultato =("
-        android:textColor="@color/black"
         android:padding="10dp"
-        android:visibility="invisible"
+        android:text="Nessun risultato =("
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="24sp"
-        android:id="@+id/noResultsTextView"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

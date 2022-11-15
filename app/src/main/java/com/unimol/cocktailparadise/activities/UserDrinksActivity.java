@@ -68,6 +68,7 @@ public class UserDrinksActivity extends AppCompatActivity implements RecyclerVie
                 } else {
 
                     noResultsTextView.setVisibility(View.VISIBLE);
+                    noResultsTextView.setText("Non hai ancora salvato nulla =(");
 
                 }
             }
